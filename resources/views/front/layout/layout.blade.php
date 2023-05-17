@@ -13,7 +13,8 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <title>Responsive Navigation Menu Bar</title>
+    <title>KeluargaBahagia</title>
+    <link rel="shortcut icon" href="{{asset('admin/images/KB-Logo.svg') }}" />
   </head>
   <body>
       {{-- Header --}}

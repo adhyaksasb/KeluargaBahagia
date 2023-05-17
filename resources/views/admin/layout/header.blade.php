@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><h3>Keluarga<span>Bahagia</span></h3></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('admin/images/KB Logo.svg')}}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="{{url('admin/dashboard')}}"><h3>Keluarga<span>Bahagia</span></h3></a>
+        <a class="navbar-brand brand-logo-mini" href="{{url('admin/dashboard')}}"><img src="{{asset('admin/images/KB-Logo.svg')}}" alt="logo"/></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -70,16 +70,24 @@
             </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="{{asset('admin/images/faces/face28.jpg')}}" alt="profile"/>
+                @if(!empty(Auth::user()->image))
+                <img src="{{asset('admin/images/profiles/'.Auth::user()->image)}}" alt="profile"/>
+                @else
+                <img src="{{asset('admin/images/profiles/dummy.jpg')}}" alt="profile">
+                @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item">
-                    <i class="ti-settings text-primary"></i>
-                    Settings
+                    <a class="dropdown-item" href="{{url('/')}}">
+                        <i class="mdi mdi-web text-primary"></i>
+                        Leave Admin Panel
                     </a>
                     <a class="dropdown-item">
-                    <i class="ti-power-off text-primary"></i>
-                    Logout
+                        <i class="ti-settings text-primary"></i>
+                        Settings
+                    </a>
+                    <a class="dropdown-item" href="{{url('user/logout')}}">
+                        <i class="ti-power-off text-primary"></i>
+                        Logout
                     </a>
                 </div>
             </li>

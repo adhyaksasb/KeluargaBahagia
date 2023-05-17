@@ -29,6 +29,13 @@ a {
     text-decoration: none;
 }
 
+.validation-error {
+    color: red;
+    font-size: 14px;
+    position: relative;
+    top: -15px;
+}
+
 .title {
     font-size: 3em;
     font-weight: 400;

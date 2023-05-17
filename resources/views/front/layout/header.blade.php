@@ -39,7 +39,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Admin Panel</a>
+            <a href="{{url("admin/dashboard")}}">Admin Panel</a>
             <a href="{{url("user/logout")}}">Logout</a>
           </div>
         </div> 

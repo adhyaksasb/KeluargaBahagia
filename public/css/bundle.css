@@ -523,12 +523,12 @@ img {
     background-color: #e4e4e4;
 }
 .genealogy-scroll::-webkit-scrollbar-thumb {
-    background: #212121;
+    background: var(--nav-color);
     border-radius: 10px;
     transition: 0.5s;
 }
 .genealogy-scroll::-webkit-scrollbar-thumb:hover {
-    background: #d5b14c;
+    background: var(--hover-color);
     transition: 0.5s;
 }
 
@@ -623,7 +623,15 @@ img {
 }
 
 .genealogy-tree ul a.relationship + ul li a:not(.relationship) {
-    margin-left: -10px;
+    margin-left: 10px;
+}
+
+.genealogy-tree ul#generation-4 li.generation-4 a:not(.relationship) {
+    margin-left: 80px;
+}
+
+.genealogy-tree ul#generation-4 li:not(:only-child) a {
+    margin-left: -60px;
 }
 
 .genealogy-tree ul li .married a {

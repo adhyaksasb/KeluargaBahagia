@@ -38,6 +38,7 @@
                       name="email"
                       placeholder="Enter your email"
                     />
+                    <span class="validation-error" id="login-email"></span>
                   </p>
                   <p>
                     <label for="password">Password</label>
@@ -47,6 +48,7 @@
                       name="password"
                       placeholder="Enter your password"
                     />
+                    <span class="validation-error" id="login-password"></span>
                   </p>
                   <p class="check">
                     <input type="checkbox" id="remember" />

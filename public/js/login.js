@@ -59,6 +59,12 @@ $(document).ready(function () {
                     });
                 } else if (resp.type == "success") {
                     window.location.href = resp.url;
+                } else if (resp.type == "incorrect") {
+                    $("#login-email").html(resp.message);
+                    $("#login-email").css({ display: "block" });
+                    setTimeout(function () {
+                        $("#login-email").css({ display: "none" });
+                    }, 2000);
                 }
             },
             error: function () {

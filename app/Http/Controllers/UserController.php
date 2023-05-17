@@ -33,6 +33,7 @@ class UserController extends Controller
                 $user->email = $data['email'];
                 $user->password = bcrypt($data['password']);
                 $user->user_type = "user";
+                $user->status = 1;
                 $user->save();
                 DB::commit();
                 
@@ -53,7 +54,8 @@ class UserController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'email' => 'required|email|exists:users,email',
-                'password' => 'required|min:6',]
+                'password' => 'required'],
+                ['email.exists' => "Email does not exist"]
             );
 
             if($validator->passes()) {
@@ -73,9 +75,5 @@ class UserController extends Controller
         Auth::logout();
 
         return redirect('/');
-    }
-
-    public function dashboard() {
-        return view('admin.dashboard');
     }
 }

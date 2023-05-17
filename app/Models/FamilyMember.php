@@ -12,4 +12,12 @@ class FamilyMember extends Model
     public function partner() {
         return $this->belongsTo('App\Models\FamilyMember', 'partner_id');
     }
+
+    public function relationship() {
+        return $this->belongsTo('App\Models\Relationship', 'relationship_id');
+    }
+
+    public function parent() {
+        return $this->belongsTo('App\Models\Relationship', 'parent_id');
+    }
 }

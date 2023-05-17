@@ -1,3 +1,10 @@
 .brand-logo h2 {
     margin-left: 12px;
 }
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
